@@ -120,7 +120,7 @@ namespace InternKadai_LoginForm_Normal
         private void Button_Login_Click(object sender, EventArgs e)
         {
 
-
+              
             //ログイン名の入力チェックを行います。
             if (String.IsNullOrEmpty(this.textBox_LoginName.Text))
             {
