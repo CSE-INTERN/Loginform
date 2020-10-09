@@ -242,7 +242,7 @@ namespace InternKadai_LoginForm_Normal
             finally
             {
 
-                if (sqlConnection.State == ConnectionState.Open)
+                if (sqlConnection.State 　==　 ConnectionState.Open)
                 {
 
                     sqlConnection.Close();
