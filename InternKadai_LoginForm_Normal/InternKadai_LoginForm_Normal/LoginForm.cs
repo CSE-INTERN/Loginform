@@ -9,7 +9,6 @@ using System.Data.SqlClient;
 
 namespace InternKadai_LoginForm_Normal
 {
-    //変更したつもり23456
     public partial class LoginForm : Form
     {
          
@@ -198,7 +197,7 @@ namespace InternKadai_LoginForm_Normal
                     if (textBox_Password.Text.CompareTo(password) == 0)
                     {
 
-                        MainForm mf = new MainForm(lastname.ToString(), firstname.ToString());
+                        MainForm mf = new MainForm(lastname[0], firstname[0]);
                         mf.Show();
 
 
