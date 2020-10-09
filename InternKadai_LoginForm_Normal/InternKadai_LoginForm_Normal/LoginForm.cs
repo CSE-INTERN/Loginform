@@ -57,52 +57,7 @@ namespace InternKadai_LoginForm_Normal
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void textBox_Password_Leave(object sender, EventArgs e)
-        {
-
-            if (String.IsNullOrEmpty(this.textBox_Password.Text) == false)
-            {
-
-                bool IsCheckPassword = Regex.IsMatch(this.textBox_Password.Text, @"[0-9]+");
-                if (IsCheckPassword == false)
-                {
-
-                    MessageBox.Show("パスワードには数字が含まれている必要があります。",
-                                    "パスワード入力文字違反",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Warning);
-                    this.textBox_Password.Text = "";
-                    this.textBox_Password.Select();
-                    return;
-                }
-
-                IsCheckPassword = Regex.IsMatch(textBox_Password.Text, @"[a-z]+");
-                if (IsCheckPassword == false)
-                {
-
-                    MessageBox.Show("パスワードには英小文字が含まれている必要があります。",
-                                    "パスワード入力文字違反",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Warning);
-                    this.textBox_Password.Text = "";
-                    this.textBox_Password.Select();
-                    return;
-                }
-
-                IsCheckPassword = Regex.IsMatch(textBox_Password.Text, @"[A-Z]+");
-                if (IsCheckPassword == false)
-                {
-
-                    MessageBox.Show("パスワードには英大文字が含まれている必要があります。",
-                                    "パスワード入力文字違反",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Warning);
-                    this.textBox_Password.Text = "";
-                    this.textBox_Password.Select();
-                    return;
-                }
-            }
-        }
+  
 
         protected void ConnectionDB()
         {
@@ -268,5 +223,9 @@ namespace InternKadai_LoginForm_Normal
             this.textBox_Password.Text = "";
         }
 
+        private void textBox_Password_Leave(object sender, EventArgs e)
+        {
+            textBox_Password.PasswordText_Leave();
+        }
     }
 }
