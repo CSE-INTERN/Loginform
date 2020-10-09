@@ -105,7 +105,8 @@ namespace InternKadai_LoginForm_Normal
             }
         }
 
-        protected void ConnectionDB(){
+        protected void ConnectionDB()
+        {
 
             this.sqlConnection = new SqlConnection(InternKadaiDatabase.ConnectionString());
             this.sqlConnection.Open();
@@ -120,7 +121,7 @@ namespace InternKadai_LoginForm_Normal
         private void Button_Login_Click(object sender, EventArgs e)
         {
 
-              
+
             //ログイン名の入力チェックを行います。
             if (String.IsNullOrEmpty(this.textBox_LoginName.Text))
             {
@@ -145,10 +146,11 @@ namespace InternKadai_LoginForm_Normal
 
 
             //入力されたログイン名とパスワードが、DBに合致するかどうかチェックします。
-            try{
+            try
+            {
 
                 ConnectionDB();
-                
+
                 //ログインユーザー数を検索する
                 string sql = " SELECT Id,LastName,FirstName,LoginPassword " +
                              " FROM [User]" +
@@ -160,14 +162,15 @@ namespace InternKadai_LoginForm_Normal
 
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
                 sqlCommand.Dispose();
-                
+
 
                 var id = new List<string>();
                 var lastname = new List<string>();
                 var firstname = new List<string>();
                 var password = new List<string>();
 
-                while (sqlDataReader.Read()) {
+                while (sqlDataReader.Read())
+                {
                     id.Add(sqlDataReader["Id"].ToString());
                     lastname.Add(sqlDataReader["LastName"].ToString());
                     firstname.Add(sqlDataReader["FirstName"].ToString());
@@ -176,7 +179,8 @@ namespace InternKadai_LoginForm_Normal
 
                 //ログインユーザ数ーをもとに処理を分岐します。
                 //1.ログインユーザがDBに登録されていない場合、エラーメッセージを返す
-                if (id.Count == 0){
+                if (id.Count == 0)
+                {
 
                     MessageBox.Show("ユーザーが登録されていません。\nユーザーを登録してください。",
                                     "エラーメッセージ",
@@ -184,18 +188,21 @@ namespace InternKadai_LoginForm_Normal
                                     MessageBoxIcon.Warning);
                     return;
 
-                //2.ログインユーザが登録されている場合
-                }else if (id.Count == 1){
+                    //2.ログインユーザが登録されている場合
+                }
+                else if (id.Count == 1)
+                {
 
 
                     //パスワードが一致している場合、メイン画面へ遷移する
-                    if (textBox_Password.Text.CompareTo(password)==0){
+                    if (textBox_Password.Text.CompareTo(password) == 0)
+                    {
 
                         MainForm mf = new MainForm(lastname.ToString(), firstname.ToString());
                         mf.Show();
 
 
-                    //パスワードが間違っている場合、エラーメッセージを返す
+                        //パスワードが間違っている場合、エラーメッセージを返す
                     }
                     else
                     {
@@ -221,7 +228,7 @@ namespace InternKadai_LoginForm_Normal
                                     MessageBoxIcon.Warning);
                 }
 
-                 
+
             }
             catch (Exception ex)
             {
@@ -235,12 +242,13 @@ namespace InternKadai_LoginForm_Normal
             finally
             {
 
-                if (sqlConnection.State == ConnectionState.Open){
+                if (sqlConnection.State == ConnectionState.Open)
+                {
 
                     sqlConnection.Close();
                     sqlConnection.Dispose();
                 }
-                if (sqlDataReader!= null) {
+                if (sqlDataReader != null) {
                     sqlDataReader.Close();
                     sqlDataReader.Dispose();
                 }
