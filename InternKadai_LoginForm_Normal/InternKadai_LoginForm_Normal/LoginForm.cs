@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 
 namespace InternKadai_LoginForm_Normal
 {
-    //変更したつもり
+    //変更したつもり2
     public partial class LoginForm : Form
     {
          
