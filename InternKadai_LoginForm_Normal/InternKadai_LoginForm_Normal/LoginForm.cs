@@ -6,10 +6,12 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 
 
-
+/// <summary>
+/// ログインフォーム　ノーマル
+/// </summary>
 namespace InternKadai_LoginForm_Normal
 {
-    //変更したつもり
+    //変更したつもり2
     public partial class LoginForm : Form
     {
          
