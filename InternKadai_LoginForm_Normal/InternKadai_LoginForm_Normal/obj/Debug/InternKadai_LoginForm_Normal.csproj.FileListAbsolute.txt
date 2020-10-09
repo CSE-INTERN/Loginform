@@ -38,5 +38,5 @@ C:\Users\nishimura\Source\Repos\CSE-INTERN\Loginform\InternKadai_LoginForm_Norma
 C:\Users\nishimura\Source\Repos\CSE-INTERN\Loginform\InternKadai_LoginForm_Normal\InternKadai_LoginForm_Normal\obj\Debug\InternKadai_LoginForm_Normal.csproj.CoreCompileInputs.cache
 C:\Users\nishimura\Source\Repos\CSE-INTERN\Loginform\InternKadai_LoginForm_Normal\InternKadai_LoginForm_Normal\obj\Debug\InternKadai_LoginForm_Normal.exe
 C:\Users\nishimura\Source\Repos\CSE-INTERN\Loginform\InternKadai_LoginForm_Normal\InternKadai_LoginForm_Normal\obj\Debug\InternKadai_LoginForm_Normal.pdb
-C:\Users\mima\source\repos\CSE-INTERN\Loginform\InternKadai_LoginForm_Normal\InternKadai_LoginForm_Normal\obj\Debug\InternKadai_LoginForm_Normal.pass.resources
 C:\Users\mima\source\repos\CSE-INTERN\Loginform\InternKadai_LoginForm_Normal\InternKadai_LoginForm_Normal\obj\Debug\InternKadai_LoginForm_Normal.LoginForm.resources
+C:\Users\mima\source\repos\CSE-INTERN\Loginform\InternKadai_LoginForm_Normal\InternKadai_LoginForm_Normal\obj\Debug\InternKadai_LoginForm_Normal.LoginButton.resources
