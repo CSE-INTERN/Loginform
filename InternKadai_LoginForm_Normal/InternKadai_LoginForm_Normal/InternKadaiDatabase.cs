@@ -23,7 +23,7 @@ namespace InternKadai_LoginForm_Normal{
             connectStrings += " password = P@ssw0rd;";
             connectStrings += " Initial Catalog = Intern_Kadai;";
             connectStrings += " Integrated Security = false";
-
+            
             return connectStrings;
         }
 
