@@ -28,3 +28,14 @@ C:\Users\mima\source\repos\CSE-INTERN\Loginform\InternKadai_LoginForm_Normal\Int
 C:\Users\mima\source\repos\CSE-INTERN\Loginform\InternKadai_LoginForm_Normal\InternKadai_LoginForm_Normal\obj\Debug\InternKadai_LoginForm_Normal.csproj.CoreCompileInputs.cache
 C:\Users\mima\source\repos\CSE-INTERN\Loginform\InternKadai_LoginForm_Normal\InternKadai_LoginForm_Normal\obj\Debug\InternKadai_LoginForm_Normal.exe
 C:\Users\mima\source\repos\CSE-INTERN\Loginform\InternKadai_LoginForm_Normal\InternKadai_LoginForm_Normal\obj\Debug\InternKadai_LoginForm_Normal.pdb
+C:\Users\r-kondou\Source\Repos\CSE-INTERN\Loginform\InternKadai_LoginForm_Normal\InternKadai_LoginForm_Normal\bin\Debug\InternKadai_LoginForm_Normal.exe.config
+C:\Users\r-kondou\Source\Repos\CSE-INTERN\Loginform\InternKadai_LoginForm_Normal\InternKadai_LoginForm_Normal\bin\Debug\InternKadai_LoginForm_Normal.exe
+C:\Users\r-kondou\Source\Repos\CSE-INTERN\Loginform\InternKadai_LoginForm_Normal\InternKadai_LoginForm_Normal\bin\Debug\InternKadai_LoginForm_Normal.pdb
+C:\Users\r-kondou\Source\Repos\CSE-INTERN\Loginform\InternKadai_LoginForm_Normal\InternKadai_LoginForm_Normal\obj\Debug\InternKadai_LoginForm_Normal.csprojAssemblyReference.cache
+C:\Users\r-kondou\Source\Repos\CSE-INTERN\Loginform\InternKadai_LoginForm_Normal\InternKadai_LoginForm_Normal\obj\Debug\InternKadai_LoginForm_Normal.MainForm.resources
+C:\Users\r-kondou\Source\Repos\CSE-INTERN\Loginform\InternKadai_LoginForm_Normal\InternKadai_LoginForm_Normal\obj\Debug\InternKadai_LoginForm_Normal.Properties.Resources.resources
+C:\Users\r-kondou\Source\Repos\CSE-INTERN\Loginform\InternKadai_LoginForm_Normal\InternKadai_LoginForm_Normal\obj\Debug\InternKadai_LoginForm_Normal.UserControl1.resources
+C:\Users\r-kondou\Source\Repos\CSE-INTERN\Loginform\InternKadai_LoginForm_Normal\InternKadai_LoginForm_Normal\obj\Debug\InternKadai_LoginForm_Normal.csproj.GenerateResource.cache
+C:\Users\r-kondou\Source\Repos\CSE-INTERN\Loginform\InternKadai_LoginForm_Normal\InternKadai_LoginForm_Normal\obj\Debug\InternKadai_LoginForm_Normal.csproj.CoreCompileInputs.cache
+C:\Users\r-kondou\Source\Repos\CSE-INTERN\Loginform\InternKadai_LoginForm_Normal\InternKadai_LoginForm_Normal\obj\Debug\InternKadai_LoginForm_Normal.exe
+C:\Users\r-kondou\Source\Repos\CSE-INTERN\Loginform\InternKadai_LoginForm_Normal\InternKadai_LoginForm_Normal\obj\Debug\InternKadai_LoginForm_Normal.pdb
