@@ -12,7 +12,7 @@ namespace InternKadai_LoginForm_Normal
 
     public partial class LoginForm : Form
     {
-
+         
         public LoginForm()
         {
 
