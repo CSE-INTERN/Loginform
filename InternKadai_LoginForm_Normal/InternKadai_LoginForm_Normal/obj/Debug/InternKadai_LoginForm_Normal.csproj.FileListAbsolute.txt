@@ -28,3 +28,4 @@ C:\Users\nishimura\Source\Repos\CSE-INTERN\Loginform\InternKadai_LoginForm_Norma
 C:\Users\nishimura\Source\Repos\CSE-INTERN\Loginform\InternKadai_LoginForm_Normal\InternKadai_LoginForm_Normal\obj\Debug\InternKadai_LoginForm_Normal.csproj.CoreCompileInputs.cache
 C:\Users\nishimura\Source\Repos\CSE-INTERN\Loginform\InternKadai_LoginForm_Normal\InternKadai_LoginForm_Normal\obj\Debug\InternKadai_LoginForm_Normal.exe
 C:\Users\nishimura\Source\Repos\CSE-INTERN\Loginform\InternKadai_LoginForm_Normal\InternKadai_LoginForm_Normal\obj\Debug\InternKadai_LoginForm_Normal.pdb
+C:\Users\nishimura\Source\Repos\CSE-INTERN\Loginform\InternKadai_LoginForm_Normal\InternKadai_LoginForm_Normal\obj\Debug\InternKadai_LoginForm_Normal.UserControl1.resources
