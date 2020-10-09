@@ -177,7 +177,7 @@ namespace InternKadai_LoginForm_Normal
                     password.Add(sqlDataReader["LoginPassword"].ToString());
                 }
 
-                //ログインユーザ数ーをもとに処理を分岐します。
+                //ログインユーザ数をもとに処理を分岐します。
                 //1.ログインユーザがDBに登録されていない場合、エラーメッセージを返す
                 if (id.Count == 0)
                 {
