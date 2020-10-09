@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 
 namespace InternKadai_LoginForm_Normal
 {
-    //コミットテスト
+    //変更したつもり23456
     public partial class LoginForm : Form
     {
          
@@ -195,11 +195,10 @@ namespace InternKadai_LoginForm_Normal
 
 
                     //パスワードが一致している場合、メイン画面へ遷移する
-                    if (textBox_Password.Text.CompareTo(password[0]) == 0)
+                    if (textBox_Password.Text.CompareTo(password) == 0)
                     {
 
-                        //MainForm mf = new MainForm(lastname.ToString(), firstname.ToString());
-                        MainForm mf = new MainForm(lastname[0], firstname[0]);
+                        MainForm mf = new MainForm(lastname.ToString(), firstname.ToString());
                         mf.Show();
 
 
@@ -249,12 +248,9 @@ namespace InternKadai_LoginForm_Normal
                     sqlConnection.Close();
                     sqlConnection.Dispose();
                 }
-
                 if (sqlDataReader != null) {
-
                     sqlDataReader.Close();
                     sqlDataReader.Dispose();
-
                 }
 
             }
