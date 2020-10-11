@@ -31,7 +31,6 @@ namespace InternKadai_LoginForm_Normal
         /// <param name="e"></param>
         private void textBox_LoginName_Leave(object sender, EventArgs e)
         {
-
             if (String.IsNullOrEmpty(this.textBox_LoginName.Text) == false)
             {
 
@@ -57,7 +56,7 @@ namespace InternKadai_LoginForm_Normal
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-  
+
 
         protected void ConnectionDB()
         {
@@ -227,5 +226,6 @@ namespace InternKadai_LoginForm_Normal
         {
             textBox_Password.PasswordText_Leave();
         }
+        
     }
 }
