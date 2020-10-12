@@ -40,11 +40,9 @@ namespace InternKadai_LoginForm_Normal
                 bool IsCheckLoginName = Regex.IsMatch(this.textBox_LoginName.Text, @"^[a-z]+$");
                 if (IsCheckLoginName == false)
                 {
-
-                    MessageBox.Show("ログイン名は半角英小文字のみです。",
-                                    "ログイン名入力文字違反",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Warning);
+                    using (var MSGBox = new MessageForm("ログイン名は半角英小文字のみです。",true)) {
+                        MSGBox.ShowDialog();
+                    }
                     this.textBox_LoginName.Text = "";
                     this.textBox_LoginName.Select();
                     return;
@@ -60,7 +58,6 @@ namespace InternKadai_LoginForm_Normal
         /// <param name="sender"></param>
         /// <param name="e"></param>
   
-
         protected void ConnectionDB()
         {
 
@@ -81,33 +78,32 @@ namespace InternKadai_LoginForm_Normal
             //ログイン名の入力チェックを行います。
             if (String.IsNullOrEmpty(this.textBox_LoginName.Text))
             {
-
-                MessageBox.Show("ログイン名を入力してください。",
-                                "ログイン名未入力",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Warning);
+                using (var MSGBox = new MessageForm("ログイン名を入力してください。", true))
+                {
+                    MSGBox.ShowDialog();
+                }
                 return;
             }
 
             //パスワードの入力チェックを行います。
             if (int.Parse(config.KVdictionary["PasswordMin"]) > this.textBox_Password.Text.Length ||
                 int.Parse(config.KVdictionary["PasswordMax"]) < this.textBox_Password.Text.Length) {
-                MessageBox.Show("パスワードは"+config.KVdictionary["PasswordMin"]+"以上"
-                                +config.KVdictionary["PasswordMax"]+"以下で入力してください。"
-                                , "パスワード未入力",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Warning);
+
+                using (var MSGBox = new MessageForm("パスワードは"+config.KVdictionary["PasswordMin"]+"文字以上"
+                                + config.KVdictionary["PasswordMax"] + "文字以下で入力してください。", true))
+                {
+                    MSGBox.ShowDialog();
+                }
                 return;
             }
 
 
                 if (String.IsNullOrEmpty(this.textBox_Password.Text))
             {
-
-                MessageBox.Show("パスワードを入力してください。",
-                                "パスワード未入力",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Warning);
+                using (var MSGBox = new MessageForm("パスワードを入力してください。", true))
+                {
+                    MSGBox.ShowDialog();
+                }
                 return;
             }
 
@@ -149,11 +145,11 @@ namespace InternKadai_LoginForm_Normal
                 //1.ログインユーザがDBに登録されていない場合、エラーメッセージを返す
                 if (id.Count == 0)
                 {
+                    using (var MSGBox = new MessageForm("ユーザーが登録されていません。\nユーザーを登録してください。", true))
+                    {
+                        MSGBox.ShowDialog();
+                    }
 
-                    MessageBox.Show("ユーザーが登録されていません。\nユーザーを登録してください。",
-                                    "エラーメッセージ",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Warning);
                     return;
 
                     //2.ログインユーザが登録されている場合
@@ -175,11 +171,10 @@ namespace InternKadai_LoginForm_Normal
                     }
                     else
                     {
-
-                        MessageBox.Show("パスワードが間違っています。\n再度入力してください。",
-                                        "エラーメッセージ",
-                                        MessageBoxButtons.OK,
-                                        MessageBoxIcon.Warning);
+                        using (var MSGBox = new MessageForm("パスワードが間違っています。\n再度入力してください。", true))
+                        {
+                            MSGBox.ShowDialog();
+                        }
 
                         this.textBox_LoginName.Text = "";
                         this.textBox_Password.Text = "";
@@ -190,22 +185,21 @@ namespace InternKadai_LoginForm_Normal
                 }
                 else
                 {
+                    using (var MSGBox = new MessageForm("ユーザーが複数登録されています。\nシステム管理者に問い合わせください。", true))
+                    {
+                        MSGBox.ShowDialog();
+                    }
 
-                    MessageBox.Show("ユーザーが複数登録されています。\nシステム管理者に問い合わせください。",
-                                    "エラーメッセージ",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Warning);
                 }
 
 
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show(ex.Message,
-                                "エラーメッセージ",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Warning);
+                using (var MSGBox = new MessageForm(ex.Message, true))
+                {
+                    MSGBox.ShowDialog();
+                }
 
             }
             finally
