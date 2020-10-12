@@ -14,6 +14,9 @@ namespace InternKadai_LoginForm_Normal
     public partial class PasswordText : TextBox
     {
         public PasswordText() { }
+        /// <summary>
+        /// パスワード入力欄からカーソルが外れたときの処理
+        /// </summary>
         public void PasswordText_Leave()
         {
             if (String.IsNullOrEmpty(this.Text) == false)
@@ -22,11 +25,11 @@ namespace InternKadai_LoginForm_Normal
                 bool IsCheckPassword = Regex.IsMatch(this.Text, @"[0-9]+");
                 if (IsCheckPassword == false)
                 {
+                    using (var MSGBox = new MessageForm("パスワードには数字が含まれている必要があります。", true))
+                    {
+                        MSGBox.ShowDialog();
+                    }
 
-                    MessageBox.Show("パスワードには数字が含まれている必要があります。",
-                                    "パスワード入力文字違反",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Warning);
                     this.Text = "";
                     this.Select();
                     return;
@@ -35,11 +38,10 @@ namespace InternKadai_LoginForm_Normal
                 IsCheckPassword = Regex.IsMatch(this.Text, @"[a-z]+");
                 if (IsCheckPassword == false)
                 {
-
-                    MessageBox.Show("パスワードには英小文字が含まれている必要があります。",
-                                    "パスワード入力文字違反",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Warning);
+                    using (var MSGBox = new MessageForm("パスワードには英小文字が含まれている必要があります。", true))
+                    {
+                        MSGBox.ShowDialog();
+                    }
                     this.Text = "";
                     this.Select();
                     return;
@@ -48,11 +50,11 @@ namespace InternKadai_LoginForm_Normal
                 IsCheckPassword = Regex.IsMatch(this.Text, @"[A-Z]+");
                 if (IsCheckPassword == false)
                 {
+                    using (var MSGBox = new MessageForm("パスワードには英大文字が含まれている必要があります。", true))
+                    {
+                        MSGBox.ShowDialog();
+                    }
 
-                    MessageBox.Show("パスワードには英大文字が含まれている必要があります。",
-                                    "パスワード入力文字違反",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Warning);
                     this.Text = "";
                     this.Select();
                     return;

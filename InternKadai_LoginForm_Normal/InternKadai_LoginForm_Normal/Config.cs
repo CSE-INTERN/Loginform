@@ -4,14 +4,13 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
+
 
 namespace InternKadai_LoginForm_Normal
 {
     class Config
     {
-        public int PasswordMin { get; set; }
-        public  int PasswordMax { get; set; }
+        public Dictionary<string,string> KVdictionary = new Dictionary<string,string>();
         public Config() {
             String sql = "select * from KV ";
             using (SqlConnection sqlConnection = new SqlConnection(InternKadaiDatabase.ConnectionString()))
@@ -27,14 +26,7 @@ namespace InternKadai_LoginForm_Normal
                 var reader = sqlDataReader;
             while (reader.Read())
                 {
-                    if (reader["KEY"].ToString().Equals("PasswordMin")) {
-                        PasswordMin = int.Parse(reader["VALUE"].ToString());
-                    }
-                    if (reader["KEY"].ToString().Equals("PasswordMax"))
-                    {
-                        PasswordMax = int.Parse(reader["VALUE"].ToString());
-                    }
-
+                    KVdictionary.Add(reader["KEY"].ToString(), reader["VALUE"].ToString() );
                 }
             }
         }
