@@ -11,23 +11,26 @@ namespace InternKadai_LoginForm_Normal
     class Config
     {
         public Dictionary<string,string> KVdictionary = new Dictionary<string,string>();
+
         public Config() {
             String sql = "select * from KV ";
             using (SqlConnection sqlConnection = new SqlConnection(InternKadaiDatabase.ConnectionString()))
+            using (SqlCommand sqlCommand = sqlConnection.CreateCommand())
+
             {
                 sqlConnection.Open();
-                SqlCommand sqlCommand = sqlConnection.CreateCommand();
+                // SqlCommand sqlCommand = sqlConnection.CreateCommand();
                 sqlCommand.CommandText = sql;
-
-                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-                sqlCommand.Dispose();
-
-
+                using (SqlDataReader sqlDataReader = sqlCommand.ExecuteReader()) { 
+                    //  SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                    // sqlCommand.Dispose();
                 var reader = sqlDataReader;
-            while (reader.Read())
+                while (reader.Read())
                 {
-                    KVdictionary.Add(reader["KEY"].ToString(), reader["VALUE"].ToString() );
+                    KVdictionary.Add(reader["KEY"].ToString(), reader["VALUE"].ToString());
                 }
+            }
+
             }
         }
 
