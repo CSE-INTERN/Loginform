@@ -90,10 +90,10 @@ namespace InternKadai_LoginForm_Normal
             }
 
             //パスワードの入力チェックを行います。
-            if (config.PasswordMin > this.textBox_Password.Text.Length ||
-                config.PasswordMax < this.textBox_Password.Text.Length) {
-                MessageBox.Show("パスワードは"+config.PasswordMin+"以上"
-                                +config.PasswordMax+"以下で入力してください。"
+            if (int.Parse(config.KVdictionary["PasswordMin"]) > this.textBox_Password.Text.Length ||
+                int.Parse(config.KVdictionary["PasswordMax"]) < this.textBox_Password.Text.Length) {
+                MessageBox.Show("パスワードは"+config.KVdictionary["PasswordMin"]+"以上"
+                                +config.KVdictionary["PasswordMax"]+"以下で入力してください。"
                                 , "パスワード未入力",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Warning);
