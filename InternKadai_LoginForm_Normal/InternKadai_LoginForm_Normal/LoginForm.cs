@@ -231,7 +231,11 @@ namespace InternKadai_LoginForm_Normal
             this.textBox_LoginName.Text = "";
             this.textBox_Password.Text = "";
         }
-
+        /// <summary>
+        /// パスワード入力制御処理
+        /// /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void textBox_Password_Leave(object sender, EventArgs e)
         {
             textBox_Password.PasswordText_Leave();

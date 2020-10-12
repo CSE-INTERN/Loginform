@@ -14,6 +14,9 @@ namespace InternKadai_LoginForm_Normal
     public partial class PasswordText : TextBox
     {
         public PasswordText() { }
+        /// <summary>
+        /// パスワード入力欄からカーソルが外れたときの処理
+        /// </summary>
         public void PasswordText_Leave()
         {
             if (String.IsNullOrEmpty(this.Text) == false)
