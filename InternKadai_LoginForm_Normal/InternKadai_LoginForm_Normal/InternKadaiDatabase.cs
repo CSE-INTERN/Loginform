@@ -36,14 +36,14 @@ namespace InternKadai_LoginForm_Normal{
         public static SqlDataReader GetDataReader(String sql){
 
             using (SqlConnection sqlConnection = new SqlConnection(ConnectionString())) {
-
+                sqlConnection.Open();
                 SqlCommand sqlCommand = sqlConnection.CreateCommand();
                 sqlCommand.CommandText = sql;
                 
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
                 sqlCommand.Dispose();
-
-                return sqlDataReader;
+                var reader = sqlDataReader;
+                return reader;
             }
         }
     }

@@ -11,13 +11,14 @@ namespace InternKadai_LoginForm_Normal
 {
     public partial class LoginForm : Form
     {
-         
+
+        Config config;
         public LoginForm()
         {
 
             InitializeComponent();
+            config = new Config();
         }
-
         /// <summary>
         /// クラス内で使用する変数を定義します。
         /// </summary>
@@ -31,6 +32,8 @@ namespace InternKadai_LoginForm_Normal
         /// <param name="e"></param>
         private void textBox_LoginName_Leave(object sender, EventArgs e)
         {
+            
+            
             if (String.IsNullOrEmpty(this.textBox_LoginName.Text) == false)
             {
 
@@ -56,7 +59,7 @@ namespace InternKadai_LoginForm_Normal
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
+  
 
         protected void ConnectionDB()
         {
@@ -87,7 +90,18 @@ namespace InternKadai_LoginForm_Normal
             }
 
             //パスワードの入力チェックを行います。
-            if (String.IsNullOrEmpty(this.textBox_Password.Text))
+            if (config.PasswordMin > this.textBox_Password.Text.Length ||
+                config.PasswordMax < this.textBox_Password.Text.Length) {
+                MessageBox.Show("パスワードは"+config.PasswordMin+"以上"
+                                +config.PasswordMax+"以下で入力してください。"
+                                , "パスワード未入力",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+                return;
+            }
+
+
+                if (String.IsNullOrEmpty(this.textBox_Password.Text))
             {
 
                 MessageBox.Show("パスワードを入力してください。",
@@ -130,6 +144,7 @@ namespace InternKadai_LoginForm_Normal
                     password.Add(sqlDataReader["LoginPassword"].ToString());
                 }
 
+
                 //ログインユーザ数をもとに処理を分岐します。
                 //1.ログインユーザがDBに登録されていない場合、エラーメッセージを返す
                 if (id.Count == 0)
@@ -148,6 +163,7 @@ namespace InternKadai_LoginForm_Normal
 
 
                     //パスワードが一致している場合、メイン画面へ遷移する
+                    //if(textBox_Password.Text.Equals( KeyValue[textBox_LoginName.Text]))
                     if (textBox_Password.Text.CompareTo(password[0]) == 0)
                     {
 
@@ -226,6 +242,5 @@ namespace InternKadai_LoginForm_Normal
         {
             textBox_Password.PasswordText_Leave();
         }
-        
     }
 }
