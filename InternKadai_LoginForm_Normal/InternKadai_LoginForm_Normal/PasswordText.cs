@@ -21,7 +21,17 @@ namespace InternKadai_LoginForm_Normal
         {
             if (String.IsNullOrEmpty(this.Text) == false)
             {
+                if (int.Parse(Program.config.KVdictionary["PasswordMin"]) > this.Text.Length ||
+                    int.Parse(Program.config.KVdictionary["PasswordMax"]) < this.Text.Length)
+                {
 
+                    using (var MSGBox = new MessageForm("パスワードは" + Program.config.KVdictionary["PasswordMin"] + "文字以上"
+                                    + Program.config.KVdictionary["PasswordMax"] + "文字以下で入力してください。", true))
+                    {
+                        MSGBox.ShowDialog();
+                    }
+                    return;
+                }
                 bool IsCheckPassword = Regex.IsMatch(this.Text, @"[0-9]+");
                 if (IsCheckPassword == false)
                 {

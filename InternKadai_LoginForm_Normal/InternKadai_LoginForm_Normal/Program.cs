@@ -8,6 +8,7 @@ namespace InternKadai_LoginForm_Normal
 {
     static class Program
     {
+        public static Config config = new Config();
         /// <summary>
         /// アプリケーションのメイン エントリ ポイントです。
         /// </summary>

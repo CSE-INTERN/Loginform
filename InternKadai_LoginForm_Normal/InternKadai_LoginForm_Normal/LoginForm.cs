@@ -9,15 +9,13 @@ using System.Data.SqlClient;
 
 namespace InternKadai_LoginForm_Normal
 {
+  
     public partial class LoginForm : Form
     {
 
-        Config config;
-        public LoginForm()
+               public LoginForm()
         {
-
             InitializeComponent();
-            config = new Config();
         }
         /// <summary>
         /// クラス内で使用する変数を定義します。
@@ -85,17 +83,6 @@ namespace InternKadai_LoginForm_Normal
                 return;
             }
 
-            //パスワードの入力チェックを行います。
-            if (int.Parse(config.KVdictionary["PasswordMin"]) > this.textBox_Password.Text.Length ||
-                int.Parse(config.KVdictionary["PasswordMax"]) < this.textBox_Password.Text.Length) {
-
-                using (var MSGBox = new MessageForm("パスワードは"+config.KVdictionary["PasswordMin"]+"文字以上"
-                                + config.KVdictionary["PasswordMax"] + "文字以下で入力してください。", true))
-                {
-                    MSGBox.ShowDialog();
-                }
-                return;
-            }
 
 
                 if (String.IsNullOrEmpty(this.textBox_Password.Text))
